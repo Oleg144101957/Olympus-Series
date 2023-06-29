@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1081087333232",
+    "project_id": "olympus-series",
+    "storage_bucket": "olympus-series.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081087333232:android:177face685612f63e1f5b5",
+        "android_client_info": {
+          "package_name": "com.production.gameplay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081087333232-rqjn27huho89p66n33khnnimai705akf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1egYJgu0nyVgxmyTJD2SoOy0ulPMq16Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081087333232-rqjn27huho89p66n33khnnimai705akf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,10 +8,12 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -27,6 +29,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.production.gameplay.OlympusBase
 import com.production.gameplay.R
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @Composable
@@ -34,6 +39,18 @@ fun FirstScreenMod(navController: NavHostController) {
     val mainAnim = remember {
         Animatable(initialValue = 0f)
     }
+
+
+    LaunchedEffect(key1 = "Redir"){
+        val scope = MainScope()
+        scope.launch {
+            delay(3000)
+            navController.navigate(ScreensOlympus.ScoreScreen.destination)
+        }
+
+    }
+
+
 
     LaunchedEffect(key1 = "mainAnim"){
         mainAnim.animateTo(
@@ -45,7 +62,7 @@ fun FirstScreenMod(navController: NavHostController) {
         )
     }
 
-    Box(contentAlignment = Alignment.Center,
+    Box(
         modifier = Modifier
             .fillMaxSize()
     ){
@@ -64,33 +81,70 @@ fun FirstScreenMod(navController: NavHostController) {
             alpha = mainAnim.value,
             modifier = Modifier
                 .offset(x = 32.dp)
+                .align(Alignment.Center)
         )
 
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(240.dp)
-                .align(Alignment.BottomCenter)
-        ){
 
-            Image(
-                painter = painterResource(id = R.drawable.btn),
-                contentDescription = "Button play",
-                alpha = 0.8f,
-                modifier = Modifier.clickable {
-                    navController.navigate(ScreensOlympus.Playground.destination)
-                }
-            )
+        Column(modifier = Modifier
+            .fillMaxWidth()
+            .align(Alignment.BottomCenter)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+            ){
 
-            Text(
-                text = "Play Game",
-                fontFamily = OlympusBase.olympusFont,
-                color = Color.White,
-                fontSize = 38.sp,
-                modifier = Modifier.alpha(0.8f)
-            )
+                Image(
+                    painter = painterResource(id = R.drawable.btn),
+                    contentDescription = "Button play",
+                    alpha = 0.8f,
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .clickable {
+                            navController.navigate(ScreensOlympus.Playground.destination)
+                        }
+                )
 
+                Text(
+                    text = "Play Game",
+                    fontFamily = OlympusBase.olympusFont,
+                    color = Color.White,
+                    fontSize = 38.sp,
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .alpha(0.8f)
+                )
+            }
+
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+            ){
+
+                Image(
+                    painter = painterResource(id = R.drawable.btn),
+                    contentDescription = "Button play",
+                    alpha = 0.8f,
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .clickable {
+                            navController.navigate(ScreensOlympus.GameInfoScreen.destination)
+                        }
+                )
+
+                Text(
+                    text = "Help",
+                    fontFamily = OlympusBase.olympusFont,
+                    color = Color.White,
+                    fontSize = 38.sp,
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .alpha(0.8f)
+                )
+            }
         }
     }
 }

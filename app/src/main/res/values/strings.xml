@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Olympus Series</string>
+    <string name="rules">
+        Welcome to Olympus, a captivating Android game that invites you to step into the shoes of a young hero and embark on an extraordinary journey through a realm of divine wonders and mythical creatures. Prepare to be enchanted by this immersive adventure that will test your skills, unravel ancient mysteries, and challenge you to become a true legend.
+
+In Olympus, you find yourself transported to a realm beyond mortal reach, where the gods of ancient mythology reside. As the chosen hero, it is your destiny to unravel the secrets of Olympus and restore balance to a world on the brink of chaos. Traverse through breathtaking landscapes, from towering mountaintops to lush valleys, as you embark on a quest to challenge the very gods themselves.
+
+Immerse yourself in a rich and intricate storyline that weaves together Greek mythology and epic fantasy. Encounter iconic gods and goddesses, each with their unique personalities and powers, and forge alliances or engage in battles that will shape the fate of Olympus. Uncover ancient artifacts, solve intricate puzzles, and overcome formidable challenges that test your wit and courage.
+    </string>
 </resources>

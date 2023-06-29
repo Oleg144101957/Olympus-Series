@@ -2,6 +2,13 @@
 <resources>
 
     <style name="Theme.App.Starting" parent="android:Theme.Material.Light.NoActionBar">
-
     </style>
+
+
+<!--    New theme for new activity-->
+    <style name="Base.Theme.WebExample" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+    </style>
+
+    <style name="Theme.WebExample" parent="Base.Theme.WebExample" />
 </resources>

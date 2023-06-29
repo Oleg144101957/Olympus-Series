@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
+        android:name=".App"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
+        android:theme="@style/Theme.WebExample"
+        android:configChanges="keyboardHidden|orientation|screenSize"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.OlympusSeries"
+        android:windowSoftInputMode="adjustResize"
         tools:targetApi="31">
+        <activity
+            android:name=".ContainerActivity"
+            android:theme="@style/Theme.WebExample"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
