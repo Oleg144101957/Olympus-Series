@@ -1,9 +1,7 @@
 package com.production.gameplay.ui.screens
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,13 +27,13 @@ import kotlinx.coroutines.delay
 fun LoadingScreen(navController: NavHostController) {
     val context = LocalContext.current
     val sharedPref = context.getSharedPreferences(OlympusBase.SHARED_PREF_NAME, Context.MODE_PRIVATE)
-    val data = sharedPref.getString(OlympusBase.SHARED_PREF_LINK, "no_data")
 
-    Log.d("123123", "LoadingScreen")
+
     LaunchedEffect(key1 = "Next screen"){
-        Log.d("123123", "Launch effect started")
-        delay(2000)
-        if (data=="dont_go"){
+        delay(6000)
+        val data = sharedPref.getString(OlympusBase.SHARED_PREF_LINK, "no_data")
+
+        if (data == "dont_go"){
             navController.navigate(ScreensOlympus.FirstSreenMod.destination)
         } else {
             val intent = Intent(context, ContainerActivity::class.java)
@@ -58,7 +56,5 @@ fun LoadingScreen(navController: NavHostController) {
             modifier = Modifier
                 .align(Alignment.Center)
         )
-
     }
-
 }

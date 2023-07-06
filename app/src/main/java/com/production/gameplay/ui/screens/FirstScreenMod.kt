@@ -40,18 +40,6 @@ fun FirstScreenMod(navController: NavHostController) {
         Animatable(initialValue = 0f)
     }
 
-
-    LaunchedEffect(key1 = "Redir"){
-        val scope = MainScope()
-        scope.launch {
-            delay(3000)
-            navController.navigate(ScreensOlympus.ScoreScreen.destination)
-        }
-
-    }
-
-
-
     LaunchedEffect(key1 = "mainAnim"){
         mainAnim.animateTo(
             targetValue = 0.45f,

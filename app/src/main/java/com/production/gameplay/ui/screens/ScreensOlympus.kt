@@ -4,6 +4,6 @@ sealed class ScreensOlympus(val destination: String){
     object GameInfoScreen : ScreensOlympus("game_info_screen")
     object Playground : ScreensOlympus("playground")
     object FirstSreenMod : ScreensOlympus("first_screen_mod")
-    object ScoreScreen : ScreensOlympus("score_screen")
     object LoadingScreen : ScreensOlympus("loading_screen")
+    object DirectToFirst : ScreensOlympus("go_direct_to_first")
 }
